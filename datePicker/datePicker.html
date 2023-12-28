@@ -1,0 +1,39 @@
+<template>
+    
+    <div class="slds-no-flex slds-m-right_small">
+        <div class="slds-theme_default date-picker-container" tabindex="0" onblur={handleClosingOptionsSelector}>
+            <div class="selector month-selector slds-text-align_center full-height" 
+                 data-type="month-selector"
+                 data-opposite-type="year-selector"
+                 onclick={handleRenderingOptionsSelector} 
+            >
+                {selectedMonthLabel}
+            </div>
+
+            <div class="selector year-selector full-height" 
+                 data-type="year-selector"
+                 data-opposite-type="month-selector"
+                 onclick={handleRenderingOptionsSelector} 
+            >
+                {selectedYear}
+            </div>
+
+            <div class="options-selector slds-hide" data-id="month-selector-options">
+                <template for:each={monthsOptions} for:item="month">
+                    <div key={month.value} data-type="Month" data-value={month.value} onclick={handleOptionSelection}>
+                        {month.label}
+                    </div>
+                </template>
+            </div>
+
+            <div class="options-selector slds-hide" data-id="year-selector-options">
+                <template for:each={yearsOptions} for:item="year">
+                    <div key={year} data-type="Year" data-value={year} onclick={handleOptionSelection}>
+                        {year}
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+</template>

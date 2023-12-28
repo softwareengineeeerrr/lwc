@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-card full-height">
+        <lightning-quick-action-panel header={labels.headerLabel}></lightning-quick-action-panel>
+        <lightning-record-edit-form object-api-name="Assignment__c" onsuccess={handleSuccess} onsubmit={handleSubmit} onerror={handleError}>
+            <div class="form-padding">
+                <div class="slds-grid slds-gutters">
+
+                    <div class="slds-col">
+
+                        <lightning-input-field field-name="ProjectTask__c" value={recordId} variant="label-stacked"> </lightning-input-field>
+                        <lightning-input-field field-name="AllowedBillableTimeAmount__c" variant="label-stacked"></lightning-input-field>
+
+                        <lightning-record-view-form record-id={recordId} object-api-name="ProjectTask__c">
+                            <lightning-output-field field-name="RemainingEstimatedTime__c" variant="label-stacked" ></lightning-output-field>
+                        </lightning-record-view-form>
+                    </div>
+
+                    <div class="slds-col">
+                        <lightning-input-field field-name="Assignee__c" variant="label-stacked" onchange={handleChange}> </lightning-input-field>
+                        <lightning-input-field field-name="EmployeeGroup__c" variant="label-stacked" class="EmployeeGroup" value={defaultEmployeeGroupId}></lightning-input-field>
+                    </div>
+
+                </div>
+
+                <lightning-input-field field-name="Description__c" variant="label-stacked" ></lightning-input-field>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button label={labels.cancelLabel} 
+                                  onclick={handleClose}
+                                  class="slds-m-left_small">
+                </lightning-button>
+
+                <lightning-button variant="brand"
+                                  type="submit"
+                                  label={labels.saveLabel}
+                                  class="slds-m-left_small">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+
+        <template if:true={renderSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+        </template>
+
+    </div>
+</template>

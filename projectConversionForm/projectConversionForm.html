@@ -1,0 +1,57 @@
+<template>
+
+    <div class="form">
+        <lightning-record-edit-form object-api-name="Project__c">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                    <lightning-input-field field-name="ProjectManager__c"
+                                           data-field-name="projectManager"
+                                           required
+                                           data-type="required-field"
+                    ></lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                    <lightning-input-field field-name="ProjectType__c"
+                                           data-field-name="projectType"
+                                           required
+                                           data-type="required-field"
+                    ></lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                    <lightning-input-field field-name="StartDate__c"
+                                           data-field-name="startDate"
+                                           required
+                                           data-type="required-field"
+                    ></lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                    <lightning-input-field field-name="EndDate__c"
+                                           data-field-name="endDate"
+                                           required
+                                           data-type="required-field"
+                    ></lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-small-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+                    <lightning-input-field field-name="PoNumber__c"
+                                           data-field-name="orderNumber"
+                                           data-type="usual-field"
+                    ></lightning-input-field>
+                </div>
+            </div>
+        </lightning-record-edit-form>
+
+        <div class="slds-m-top_small slds-align_absolute-center">
+            <div class="slds-p-around_medium">
+                <lightning-button-group>
+                    <lightning-button label="Schließen" onclick={handleCancelClick}></lightning-button>
+                    <lightning-button label="Erstellen" variant="brand" onclick={handleCreateClick}></lightning-button>
+                </lightning-button-group>
+            </div>
+        </div>
+    </div>
+    
+</template>

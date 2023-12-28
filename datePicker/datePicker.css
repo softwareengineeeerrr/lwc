@@ -1,0 +1,96 @@
+.date-picker-container {
+    position: relative;
+    width: 100%;
+    height: 2.462em;
+    display: flex;
+}
+
+.date-picker-container:focus {
+    outline: none;
+}
+
+.selector {
+    color: white;
+    line-height: 2.462em;
+    white-space: nowrap;
+    background-color: var(--lwc-brandAccessible, rgb(0, 112, 210));
+    user-select: none;  
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}
+
+.month-selector {
+    width: 7em;
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.year-selector {
+    border-radius: 0 .25rem .25rem 0;
+    padding: 0 1em;
+}
+
+.month-selector:hover, .year-selector:hover {
+    cursor: pointer;
+    background-color: var(--lwc-brandAccessibleActive, rgb(0, 68, 135, 1));
+}
+
+.selected-option {
+    color: white;
+    background-color: var(--lwc-brandAccessible, rgb(0, 112, 210, .7));
+}
+
+.options-selector {
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    max-height: 15rem;
+    background-color: white;
+    top: 2.5em;
+    border-radius: 0 0 .25rem .25rem;
+    z-index: 9999;
+    border: 1px solid var(--lwc-brandAccessible, rgb(0, 112, 210));
+    border-top: none;
+}
+
+.options-selector > div {
+    height: 3em;
+    padding-top: 1em;
+    padding-left: 2em;
+}
+
+.options-selector > div:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--lwc-brandAccessible, rgb(0, 112, 210, .7));
+}
+
+.options-selector::-webkit-scrollbar {
+    width: 6.5pt;
+}
+
+.options-selector::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.options-selector::-webkit-scrollbar-thumb {
+    background: var(--lwc-brandAccessibleActive, rgb(0, 68, 135, 1));
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 1pt solid #f1f1f1;
+}
+
+.options-selector::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.select-act-color {
+    background-color:  var(--lwc-brandAccessibleActive, rgb(0, 68, 135, 1));
+}
+
+.select-act-m-radius {
+    border-radius: .25rem 0 0 0;
+}
+
+.select-act-y-radius {
+    border-radius: 0 .25rem 0 0;
+}
